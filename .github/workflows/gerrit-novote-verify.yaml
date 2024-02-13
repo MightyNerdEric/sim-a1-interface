@@ -73,7 +73,7 @@ jobs:
   call-gerrit-tox-verify:
     # needs: prepare
     # yamllint disable-line rule:line-length
-    uses: mightynerderic/releng-reusable-workflows/.github/workflows/gerrit-compose-required-tox-verify.yaml@tox-test
+    uses: mightynerderic/releng-reusable-workflows/.github/workflows/gerrit-compose-required-tox-verify.yaml@fix-tox-workflow
     # Arbitrary change
     with:
       TOX_ENVS: '["code"]'

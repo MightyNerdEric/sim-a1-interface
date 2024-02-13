@@ -3,6 +3,9 @@ name: Gerrit Verify
 
 # yamllint disable-line rule:truthy
 on:
+  push:
+    branches:
+      - "master"
   workflow_dispatch:
     inputs:
       GERRIT_BRANCH:
@@ -70,7 +73,7 @@ jobs:
   call-gerrit-tox-verify:
     needs: prepare
     # yamllint disable-line rule:line-length
-    uses: lfit/releng-reusable-workflows/.github/workflows/gerrit-compose-required-tox-verify.yaml@main
+    uses: mightynerderic/releng-reusable-workflows/.github/workflows/gerrit-compose-required-tox-verify.yaml@tox-test
     with:
       GERRIT_BRANCH: ${{ inputs.GERRIT_BRANCH }}
       GERRIT_CHANGE_ID: ${{ inputs.GERRIT_CHANGE_ID }}
